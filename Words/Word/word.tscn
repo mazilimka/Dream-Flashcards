@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5f67wkqkjk6k"]
+
+[ext_resource type="Script" path="res://Words/Word/word.gd" id="1_57q1l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_70mah"]
+font_size = 70
+
+[node name="Word" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+script = ExtResource("1_57q1l")
+
+[node name="Name" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+text = "easdfasdf"
+label_settings = SubResource("LabelSettings_70mah")
+
+[node name="Translation" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "asdfasdfasdf"
+label_settings = SubResource("LabelSettings_70mah")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://sct0r8to8o5y"]
+
+[ext_resource type="Script" path="res://WordList/word_list.gd" id="1_pkia3"]
+
+[node name="WordList" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 60
+script = ExtResource("1_pkia3")

@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmn6w5f3yn0fh"]
+
+[ext_resource type="Script" path="res://AddWord/add_word.gd" id="1_d7twu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjjq1"]
+font_size = 85
+
+[node name="AddWord" type="Panel"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -509.5
+offset_right = 509.5
+offset_bottom = 1326.0
+grow_horizontal = 2
+size_flags_vertical = 3
+script = ExtResource("1_d7twu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.537255, 0.203922, 0.203922, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 140
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 101
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Введи слово "
+label_settings = SubResource("LabelSettings_hjjq1")
+
+[node name="WordName" type="LineEdit" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 92
+placeholder_text = "Слово"
+expand_to_text_length = true
+virtual_keyboard_type = 1
+caret_blink = true
+caret_blink_interval = 1.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 101
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Введи перевод "
+label_settings = SubResource("LabelSettings_hjjq1")
+
+[node name="WordTranslate" type="LineEdit" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 92
+placeholder_text = "Перевод"
+expand_to_text_length = true
+virtual_keyboard_type = 1
+caret_blink = true
+caret_blink_interval = 1.0
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Confirm" type="Button" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 176)
+layout_mode = 2
+offset_left = 119.5
+offset_top = 530.6
+offset_right = 920.5
+offset_bottom = 706.6
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 80
+text = "Сохранить и выйти"

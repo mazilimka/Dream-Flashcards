@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://baqb1wam5uugv"]
+
+[ext_resource type="Script" path="res://WordListScreen/words_list_screen.gd" id="1_wmgki"]
+[ext_resource type="PackedScene" uid="uid://sct0r8to8o5y" path="res://WordList/word_list.tscn" id="2_o6gcv"]
+[ext_resource type="Texture2D" uid="uid://dds2w7kxe0rbk" path="res://Assets/Plus.png" id="2_t1lps"]
+[ext_resource type="Texture2D" uid="uid://dyhs32gjki68l" path="res://Assets/PlusShadow.png" id="4_l4er4"]
+
+[node name="WordsListScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmgki")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219501, 0.219501, 0.219501, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="WordList" parent="MarginContainer/ScrollContainer" instance=ExtResource("2_o6gcv")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="AddWord" type="TextureButton" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("2_t1lps")
+texture_pressed = ExtResource("4_l4er4")
+stretch_mode = 0
