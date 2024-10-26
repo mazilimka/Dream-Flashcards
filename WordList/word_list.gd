@@ -15,6 +15,6 @@ func _ready() -> void:
 
 
 func add_word(word: String, translation: String):
-	var word_instant : HBoxContainer = word_scene.instantiate()
+	var word_instant : VBoxContainer = word_scene.instantiate()
 	word_instant.set_word(word, translation)
 	add_child(word_instant, true)
