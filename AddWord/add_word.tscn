@@ -6,13 +6,17 @@
 font_size = 85
 
 [node name="AddWord" type="Panel"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -509.5
-offset_right = 509.5
-offset_bottom = 1326.0
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -663.0
+offset_right = 540.0
+offset_bottom = 663.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_d7twu")
 
@@ -35,16 +39,16 @@ grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 140
+theme_override_constants/separation = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 6
-theme_override_constants/separation = 101
+size_flags_vertical = 2
+theme_override_constants/separation = 86
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -65,8 +69,8 @@ caret_blink_interval = 1.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 101
+size_flags_vertical = 2
+theme_override_constants/separation = 86
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -85,20 +89,27 @@ virtual_keyboard_type = 1
 caret_blink = true
 caret_blink_interval = 1.0
 
+[node name="Confirm" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+text = "Сохранить и выйти"
+
+[node name="Cancel" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+text = "Cancel"
+
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Confirm" type="Button" parent="Control"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 176)
-layout_mode = 2
-offset_left = 119.5
-offset_top = 530.6
-offset_right = 920.5
-offset_bottom = 706.6
-size_flags_horizontal = 4
-focus_mode = 0
-theme_override_font_sizes/font_size = 80
-text = "Сохранить и выйти"

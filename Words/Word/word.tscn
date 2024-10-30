@@ -5,29 +5,38 @@
 [sub_resource type="LabelSettings" id="LabelSettings_70mah"]
 font_size = 70
 
-[node name="Word" type="VBoxContainer"]
+[node name="Word" type="MarginContainer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 196.0
+offset_bottom = 925.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
-theme_override_constants/separation = 30
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
 script = ExtResource("1_57q1l")
 
-[node name="Name" type="Label" parent="."]
-unique_name_in_owner = true
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 6
-text = "easdfasdf"
-label_settings = SubResource("LabelSettings_70mah")
+theme_override_constants/separation = 40
 
-[node name="Translation" type="Label" parent="."]
+[node name="Name" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(1040, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "easdfasdf борориори шпрорпл гнгнплгппгнпорплорп орп орплор"
+label_settings = SubResource("LabelSettings_70mah")
+autowrap_mode = 2
+
+[node name="Translation" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1040, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 2
-text = "asdfasdfasdf"
+text = "dfsuafj шгршршгрщшгршгр шгр щшгршгр щшг шргшгшг рлорлорлорлорлдорлорло д д"
 label_settings = SubResource("LabelSettings_70mah")
+horizontal_alignment = 2
+autowrap_mode = 2
