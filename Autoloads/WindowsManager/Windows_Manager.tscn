@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cehdyt80fvkfa"]
+[gd_scene load_steps=7 format=3 uid="uid://cehdyt80fvkfa"]
 
 [ext_resource type="Script" path="res://Autoloads/WindowsManager/Windows_Manager.gd" id="1_dt4fu"]
 [ext_resource type="PackedScene" uid="uid://cmn6w5f3yn0fh" path="res://AddWord/add_word.tscn" id="2_6dis3"]
 [ext_resource type="PackedScene" uid="uid://dp4mc4rby43lo" path="res://Menu/menu.tscn" id="3_751cy"]
+[ext_resource type="Texture2D" uid="uid://dds2w7kxe0rbk" path="res://Assets/Plus.png" id="4_atmvs"]
+[ext_resource type="Texture2D" uid="uid://dyhs32gjki68l" path="res://Assets/PlusShadow.png" id="5_j2ldh"]
+[ext_resource type="PackedScene" uid="uid://d0ivv6lctkknn" path="res://Words/WordMenu/word_menu.tscn" id="6_r11gp"]
 
 [node name="WindowsManager" type="CanvasLayer"]
 script = ExtResource("1_dt4fu")
@@ -12,5 +15,28 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Menu" parent="." instance=ExtResource("3_751cy")]
+unique_name_in_owner = true
+visible = false
+
+[node name="AddWordButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 250)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -250.0
+offset_right = 125.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("4_atmvs")
+texture_pressed = ExtResource("5_j2ldh")
+stretch_mode = 5
+
+[node name="WordMenu" parent="." instance=ExtResource("6_r11gp")]
 unique_name_in_owner = true
 visible = false

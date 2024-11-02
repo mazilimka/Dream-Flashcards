@@ -4,12 +4,16 @@ const SAVE_FILE := "user://savegame.save"
 
 var save_words := []
 var is_start_app := false
-var word_counter := 0
-var input_word_name: String
-var input_word_translate: String
+var inp_word_name: String
+var inp_word_transl: String
 
+var word_id := 0
+var curr_word_id: int
+
+var WordList
 
 func _ready() -> void:
+	Events.change_word.connect(change_word)
 	is_start_app = true
 
 
@@ -52,3 +56,7 @@ func clear_all_words():
 	else:
 		file.store_line('')
 		return
+
+
+func change_word(word: String, translation: String, word_id: int):
+	pass
