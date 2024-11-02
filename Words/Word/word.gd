@@ -1,6 +1,10 @@
 extends MarginContainer
 
 
+@onready var word_name: Label = %Name
+@onready var word_translation: Label = %Translation
+
+
 const RND_COLORS := [
 	Color.RED,
 	Color.PINK,
@@ -50,8 +54,8 @@ func hide_transl_or_words(_toggled_on: bool, _what: String):
 
 
 func _word_button_pressed():
-	WindowsManager.change_window('WordMenu')
 	Global.curr_word_id = my_id
+	WindowsManager.change_window('WordMenu')
 
 
 func change_word(word: String, translation: String):

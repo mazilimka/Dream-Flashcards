@@ -46,3 +46,11 @@ func change_word(word: String, translation: String, word_id: int):
 	for _word in get_children():
 		if _word.my_id == word_id:
 			_word.change_word(word, translation)
+
+
+func get_word_by_index(_index: int):
+	var word_dic: Dictionary
+	for word in get_children():
+		if word.my_id == _index:
+			word_dic = {'word': word.word_name.text, 'translation': word.word_translation.text}
+	return word_dic

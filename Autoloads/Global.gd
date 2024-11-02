@@ -13,7 +13,7 @@ var curr_word_id: int
 var WordList
 
 func _ready() -> void:
-	Events.change_word.connect(change_word)
+	Events.change_word.connect(save_changed_word)
 	is_start_app = true
 
 
@@ -31,6 +31,10 @@ func save_to_file(word: String, translation: String):
 	if file != null:
 		file.seek(file.get_length())
 		file.store_line(str(word) + ':' + str(translation))
+
+
+func save_changed_word(word: String, translation: String, word_id: int):
+	pass
 
 
 func load_from_file() -> Array:
@@ -56,7 +60,3 @@ func clear_all_words():
 	else:
 		file.store_line('')
 		return
-
-
-func change_word(word: String, translation: String, word_id: int):
-	pass

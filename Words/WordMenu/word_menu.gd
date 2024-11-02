@@ -8,6 +8,20 @@ func _ready() -> void:
 	%WordTranslation.text_submitted.connect(_word_translation_text_changed)
 
 
+func open():
+	var word = Global.WordList.get_word_by_index(Global.curr_word_id)
+	%WordName.placeholder_text = word['word']
+	%WordTranslation.placeholder_text = word['translation']
+	show()
+	print(word)
+
+
+func close():
+	%WordName.clear()
+	%WordTranslation.clear()
+	hide()
+
+
 func _back_pressed():
 	WindowsManager.change_window('WordListScreen')
 

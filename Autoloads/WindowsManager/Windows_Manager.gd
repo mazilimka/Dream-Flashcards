@@ -19,25 +19,25 @@ func change_window(_needs_window: String):
 			%AddWord.show()
 			%Menu.hide()
 			%AddWordButton.hide()
-			%WordMenu.hide()
+			%WordMenu.close()
 			CurrentWindow = 'AddWord'
 		'WordListScreen':
 			%AddWord.hide()
 			%Menu.hide()
 			%AddWordButton.show()
-			%WordMenu.hide()
+			%WordMenu.close()
 			CurrentWindow = 'WordListScreen'
 		'Menu':
 			%AddWord.hide()
 			%Menu.show()
 			%AddWordButton.hide()
-			%WordMenu.hide()
+			%WordMenu.close()
 			CurrentWindow = 'Menu'
 		'WordMenu':
 			%AddWord.hide()
 			%Menu.hide()
 			%AddWordButton.hide()
-			%WordMenu.show()
+			%WordMenu.open()
 			CurrentWindow = 'WordMenu'
 
 
