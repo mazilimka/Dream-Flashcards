@@ -17,12 +17,17 @@ func _word_translate_text_changed(new_text: String):
 
 
 func _confirm_pressed():
-	WindowsManager.change_window('WordListScreen')
+	%AnimationPlayer.play("add_word")
 	Events.add_word.emit(Global.inp_word_name, Global.inp_word_transl)
-	
 	Global.save_to_file(Global.inp_word_name, Global.inp_word_transl)
-	%WordName.clear()
-	%WordTranslate.clear()
+	
+	await %AnimationPlayer.animation_finished
+	WindowsManager.change_window('WordListScreen')
+	if %WordName.text != '':
+		%WordName.clear()
+	if %WordTranslation.text != '':
+		%WordTranslation.clear()
+	modulate = Color('ffffff')
 
 
 func _cancel_pressed():

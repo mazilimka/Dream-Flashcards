@@ -1,18 +1,81 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmn6w5f3yn0fh"]
+[gd_scene load_steps=6 format=3 uid="uid://cmn6w5f3yn0fh"]
 
 [ext_resource type="Script" path="res://AddWord/add_word.gd" id="1_d7twu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hjjq1"]
 font_size = 85
 
+[sub_resource type="Animation" id="Animation_avo0x"]
+resource_name = "add_word"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.366667, 0.7, 1),
+"transitions": PackedFloat32Array(1, 0.5, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.261799, 3.14159, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.633333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e76bd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sr7bq"]
+_data = {
+"RESET": SubResource("Animation_e76bd"),
+"add_word": SubResource("Animation_avo0x")
+}
+
 [node name="AddWord" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 15.0
+offset_top = 88.0
 offset_right = -14.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(346, 452)
 size_flags_vertical = 3
 script = ExtResource("1_d7twu")
 
@@ -35,6 +98,7 @@ theme_override_constants/separation = -47
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_constants/separation = 40
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -56,8 +120,9 @@ caret_mid_grapheme = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 6
 theme_override_constants/separation = 40
+metadata/_edit_group_ = true
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -79,7 +144,9 @@ caret_mid_grapheme = true
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
 theme_override_constants/separation = 38
+metadata/_edit_group_ = true
 
 [node name="Confirm" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
@@ -100,3 +167,11 @@ size_flags_vertical = 0
 focus_mode = 0
 theme_override_font_sizes/font_size = 54
 text = "Cancel"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_sr7bq")
+}
+movie_quit_on_finish = true
